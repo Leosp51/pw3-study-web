@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { ConexaoService } from './../../services/conexao.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,7 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent {
-
-  conexoes : number = 1;
+  conexoes:any = 0;
+  constructor(conexaoService:ConexaoService){
+    conexaoService.contarConexoes().subscribe(resp=>{
+      this.conexoes = resp;
+    });
+  }
 
 }
