@@ -11,4 +11,5 @@ export class ConexaoService {
   contarConexoes(): Observable<number>{
     return this.httpClient.get<number>(`${this.URL}`);
   }
-}
+}//gerar serviço ng g s nome
+//gerar interface ng g i nome
